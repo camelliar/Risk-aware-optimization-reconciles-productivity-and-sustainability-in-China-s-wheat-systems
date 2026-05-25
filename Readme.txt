@@ -1,3 +1,15 @@
+IMPORTANT NOTE ON LOCAL PATH CONFIGURATION
+------------------------------------------
+This repository contains demonstration scripts for site-level optimization and spatial prediction. Before running the workflow, users must update local file paths according to their computing environment.
+
+In particular, users should check and modify:
+1. the DSSAT executable path in run_optimization_demo.R;
+2. the working directory containing the sample DSSAT site-year folders;
+3. the raster input directory in grid_predict_fertilizer.py and grid_predict_irrigation.py;
+4. the output directory for generated CSV and GeoTIFF files, if different from the default setting.
+
+The example paths provided in the scripts are placeholders and should be replaced with user-specific local paths.
+
 =========================================================================
 PART A: SITE-LEVEL OPTIMIZATION (R + DSSAT)
 =========================================================================
@@ -37,6 +49,8 @@ Before running the script, you MUST update the path to the DSSAT executable in '
 3. Change this path to match the location of 'DSCSM047.EXE' on your computer. 
    - Windows Example: "C:/DSSAT47/DSCSM047.EXE"
    - Linux Example: "/usr/local/bin/dscsm047"
+
+Please also ensure that the working directory is set to the root folder containing the sample site-year directory (e.g., 53797/2013/). The relative folder structure should be retained unless corresponding paths in the script are also updated.
 
 5. HOW TO RUN
 ---------------------
@@ -99,6 +113,8 @@ B. Python Libraries:
    BASE_INPUT_DIR = 'D:/grid_pred/'
 3. Change this path to the actual location of your raster data folders.
    - Example: BASE_INPUT_DIR = 'C:/Users/Name/Project/Data/'
+
+If an output directory variable is defined in the prediction scripts, please also update it to a writable local folder. The raster folder structure should be retained unless corresponding file-reading paths are modified in the scripts.
 
 5. HOW TO RUN
 ---------------------
